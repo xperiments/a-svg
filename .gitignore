@@ -1,0 +1,9 @@
+node_modules
+lib
+test-files
+tmp
+ffdec
+.DS_Store
+package-lock.json
+*.js
+*.d.ts

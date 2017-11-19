@@ -1,0 +1,44 @@
+{
+    "name": "a-svg",
+    "version": "0.0.1",
+    "description": "Convert SWF files to animated playable SVG",
+    "repository": "git@github.com:xperiments/a-svg.git",
+    "main": "lib/index",
+    "types": "lib/index",
+    "bin": {
+        "a-svg": "./lib/index.js"
+    },
+    "scripts": {
+        "build":
+            "npm run build:jsfl && npm run build:compile && npm run build:copyjsfl && npm run build:player && npm run build:playermin",
+        "build:compile": "tsc || echo done",
+        "build:player": "cd player && tsc || echo done",
+        "build:playermin":
+            "mkdir -p lib/player/ && ./minify-js.sh < player/svg-player-matrix.js | tr -d '\n' > lib/player/svg-player-matrix.min.js",
+        "build:jsfl": "cd jsfl && tsc || echo done",
+        "build:copyjsfl": "cp jsfl/asvg.js lib/scripts/asvg.jsfl",
+        "post:ffdec":
+            "mkdir -p ./ffdec && wget -qO- https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version10.0.0/ffdec_10.0.0.zip | tar xz -C ./ffdec",
+        "post:jsfl": "cd ./lib/scripts && node postinstall.js",
+        "postinstall": "npm run post:ffdec && npm run post:jsfl",
+        "prepublishOnly": "build"
+    },
+    "author": "Pedro Casaubon",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "dom-parser": "^0.1.5",
+        "express": "^4.16.1",
+        "opn": "^5.1.0",
+        "xmldom": "^0.1.27"
+    },
+    "devDependencies": {
+        "@types/body-parser": "^1.16.5",
+        "@types/jsfl": "0.0.33",
+        "@types/node": "^8.0.3",
+        "@types/xmldom": "^0.1.29",
+        "@types/yargs": "^8.0.2",
+        "ts-loader": "^2.2.1",
+        "typescript": "^2.6.1"
+    }
+}

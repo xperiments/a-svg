@@ -1,0 +1,10 @@
+node_modules
+jsfl
+src
+player
+test-files
+tmp
+ffdec
+.DS_Store
+package-lock.json
+tsconfig.json

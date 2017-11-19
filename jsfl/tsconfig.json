@@ -1,0 +1,13 @@
+{
+    "include": ["./**/*"],
+    "exclude": ["node_modules"],
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "strict": true,
+        "lib": ["es2015"],
+        "types": ["node"],
+        "skipLibCheck": true
+    }
+}

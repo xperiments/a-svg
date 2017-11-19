@@ -1,0 +1,10 @@
+{
+    "include": ["./**/*"],
+    "compilerOptions": {
+        "target": "es5",
+        "module": "none",
+        "strict": false,
+        "declaration": true,
+        "lib": ["ES6", "DOM", "DOM", "ES5", "ScriptHost"]
+    }
+}
