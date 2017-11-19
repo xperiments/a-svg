@@ -21,7 +21,7 @@
             "mkdir -p ./ffdec && wget -qO- https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version10.0.0/ffdec_10.0.0.zip | tar xz -C ./ffdec",
         "post:jsfl": "cd ./lib/scripts && node postinstall.js",
         "postinstall": "npm run post:ffdec && npm run post:jsfl",
-        "prepublishOnly": "build"
+        "prepublishOnly": "npm run build"
     },
     "author": "Pedro Casaubon",
     "license": "MIT",
