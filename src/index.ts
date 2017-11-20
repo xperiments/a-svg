@@ -132,8 +132,11 @@ function main() {
 function parseSWF(config: ASVGConfig) {
     logger.log('Converting SWF to SVG frames');
     const time = +new Date();
-    config.tmpDir = `./tmp/output${time}`;
-    const command = `./ffdec/ffdec.sh  -format shape:svg,morphshape:svg,frame:svg,sprite:svg,button:svg,image:png_gif_jpeg,text:svg -export frame ${
+    const ffdec = path.resolve(`${__dirname}/../ffdec/ffdec.sh`);
+    config.tmpDir = path.resolve(`${__dirname}/../tmp/output${time}`);
+    const command = `${
+        ffdec
+    }  -format shape:svg,morphshape:svg,frame:svg,sprite:svg,button:svg,image:png_gif_jpeg,text:svg -export frame ${
         config.tmpDir
     } ${config.resolvedInput}`;
     exec(command, (error: any, stdout: any, stderr: any) => {
