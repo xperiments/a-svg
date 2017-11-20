@@ -3,7 +3,6 @@ jsfl
 src
 /player
 test-files
-tmp
 ffdec
 .DS_Store
 package-lock.json
