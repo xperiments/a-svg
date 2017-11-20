@@ -1,7 +1,7 @@
 node_modules
 jsfl
 src
-player
+/player
 test-files
 tmp
 ffdec
