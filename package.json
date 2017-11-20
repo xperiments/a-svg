@@ -1,6 +1,6 @@
 {
     "name": "a-svg",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Convert SWF files to animated playable SVG",
     "repository": "git@github.com:xperiments/a-svg.git",
     "main": "lib/index",
